@@ -1,7 +1,16 @@
 filetype pdb
+#name of the output file
 output waterbox.pdb
+
+#the closest distance that two atoms/molecules can be
 tolerance 2.0
+
+#name of the structure specify the geometry and the molecule structure molecule_name.pdb
 structure tip3.pdb
+    #number of atoms
     number 100
-    inside cube 0. 0. 0. 31.
+    
+    #First 3 zeros correspond to the first vertex, and 31 correspond to the length of the edges 31 amstrongs. 
+    inside cube 0. 0. 0. 31. 
+    
 end structure
