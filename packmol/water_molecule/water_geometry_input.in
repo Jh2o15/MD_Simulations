@@ -1,0 +1,7 @@
+filetype pdb
+output waterbox.pdb
+tolerance 2.0
+structure tip3.pdb
+    number 100
+    inside cube 0. 0. 0. 31.
+end structure
