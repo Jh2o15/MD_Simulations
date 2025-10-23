@@ -1,10 +1,17 @@
-# Molecular Dynamics Simulations
-Quick tutorial on how to start on molecular dynamics
+# Quick tutorial on how to start on molecular dynamics
 
+## Simulation workflow
+molecule generation -> geometry generation -> topology generation -> dynamics generation -> visualization
+## Molecule Generation
+So far we are generating molecules by using Charmm-Gui, or looking at the resposity of them 
+* https://www.charmm-gui.org/?doc=archive&lib=csml  #Library of molecules 
+* https://www.charmm-gui.org/?doc=input/ligandrm    #Input generator
+## Packmol (Geometry Generation)
 Packmole is a software that help us to set up the initial configurations of our system. 
 You need pdb files that describe molecules you want to work with and then specify which geometries that molecules should describe. 
-Packmol is in charge of dividing the number of molecules you want and in the region you want with a minimum separation which is called tolerance. 
-by running the packmole file it will generate.
+Packmol is in charge of dividing the number of molecules you want, in the region you want with a minimum separation which is called tolerance. 
+
+By running the packmole file it will generate.
 
 You can have a plain text with a "packmol < file_name.inp", packmol uses "inp" extenssion. The script should generate a "pdb" file, with the name of  
 type of atom,  number of atom, name of the atom, Molecule model , spatial conditions , these ones are the most relevant one. 
