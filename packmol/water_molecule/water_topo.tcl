@@ -1,7 +1,8 @@
 #loads the file waterbox as a new molecule and wait untill all frames are finished.
 mol new waterbox.pdb waitfor all
 
-package require pbctools #package for periodic boundary conditions
+#package for periodic boundary conditions
+package require pbctools 
 
 #package to create/modify molecular topology data inside VMD and to export to Lammps
 package require topotools 
@@ -21,8 +22,10 @@ $selH set charge  0.417
 $selO set mass 15.9994
 $selH set mass 1.008
 
+#ask topotools to identify atomic interaction based on interatomic distances.
+topo guessbonds 
+#after bonds are presented compute the angles. 
+topo guessangles 
 
-topo guessbonds #ask topotools to identify atomic interaction based on interatomic distances.
-topo guessangles #after bonds are presented compute the angles. 
-
-topo writelammpsdata water.data full #write the topology of the molecule in a Lammps data file 
+#write the topology of the molecule in a Lammps data file 
+topo writelammpsdata water.data full 
