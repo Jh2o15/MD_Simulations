@@ -6,6 +6,6 @@ For this we proced as follows:
 
 1.- set up the initial geometry of th problem with the *water_geometry_input.in* which needs to be runned with packmol and generaates *waterbox.pdb*.
 
-2.- Using *waterbox.pdb*, we create its topology file *water_topo_tcl* and run it on the VMD console. This step generates *water.daba*, a file with all the information that would need to code the simulation.
+2.- Using *waterbox.pdb*, we create its topology file *water_topo_tcl* and run it on the VMD console. This step generates *water.data*, a file with all the information that would need to code the simulation.
 
 3.- Reading *water.data* we obtain the data needed for the simulation and we code it in lammps *in.water* file, running it generates *water_small.lammpstrj* which can be visualized in OVITO.
