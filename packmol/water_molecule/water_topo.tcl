@@ -1,3 +1,4 @@
+
 mol new waterbox.pdb waitfor all
 
 package require pbctools
