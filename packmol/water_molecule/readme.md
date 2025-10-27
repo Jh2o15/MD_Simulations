@@ -4,7 +4,7 @@ Tip3 models have a distributed its charge over the 3 atoms that form the molecul
 
 For this we proced as follows: 
 
-1.- set up the initial geometry of th problem with the *water_geometry_input.in* which needs to be runned with packmol and generaates *waterbox.pdb*.
+1.- set up the initial geometry of th problem with the *water_geometry_input.in* which needs to be runned with packmol and generates *waterbox.pdb*.
 
 2.- Using *waterbox.pdb*, we create its topology file *water_topo_tcl* and run it on the VMD console. This step generates *water.data*, a file with all the information that would need to code the simulation.
 
