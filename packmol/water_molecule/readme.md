@@ -3,4 +3,5 @@ Tip3 models have a distributed its charge over the 3 atoms that form the molecul
 
 For this we proced as follows: 
 
-1.- set up the initial geometry of th problem with the  
+1.- set up the initial geometry of th problem with the *water_geometry_input.in* which needs to be runned with packmol 
+2.- The above step generates the 
