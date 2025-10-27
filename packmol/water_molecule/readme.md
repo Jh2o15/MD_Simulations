@@ -1,7 +1,9 @@
 This projects simulate a box of water using a tip3 model. 
-Tip3 models have a distributed its charge over the 3 atoms that form the molecule. 
+
+Tip3 models have a distributed its charge over the 3 atoms that form the molecule, and it was donwloaded from Charmm. It's name is "tip3.pdb".
 
 For this we proced as follows: 
 
-1.- set up the initial geometry of th problem with the *water_geometry_input.in* which needs to be runned with packmol 
-2.- The above step generates the 
+1.- set up the initial geometry of th problem with the *water_geometry_input.in* which needs to be runned with packmol and generaates *waterbox.pdb*.
+
+2.- Using waterbox.pdb
