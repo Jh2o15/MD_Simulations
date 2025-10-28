@@ -62,6 +62,7 @@ thermo_style custom step temp vol press pe ke etotal density
 thermo 100
 dump traj all atom 100 water.lammpstrj #print the trajectory every 100 steeps
 
+#Following lines is statistical information about the final configuration 
 
 # RDF (assumes type 1 = O; change if needed)
 compute rdfOO all rdf 200 1 1
