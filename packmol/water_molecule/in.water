@@ -1,35 +1,66 @@
 
 units   real
-atom_style full
-boundary p p p
+atom_style full # this includes atom-id, molecule-id, atom-type, charge and postion x,y,z 
+boundary p p p #periodic boundary conditions in each component 
 
 read_data water.data            # your file from VMD/TopoTools or CHARMM-GUI
 
-# Nonbonded (TIP3P-like)
+
+#interaction between molecules 
+#lj= lj potential with a cut of 10 amstrongs 
+#coulomb potential with long range with 10 amstrongs
+#since we are declarating one cut off, the same cut off apply for both interactions 
+#kspace_style tell lamps to compute long range interactions with an acurracy of 1e-6
+
+
 pair_style   lj/cut/coul/long 10.0
 kspace_style pppm 1e-6
+
+#is a selection of the mixing rule for the lj coefficient (sigma_j+sigma_i/2)
 pair_modify  mix arithmetic
+
+#specify the lj coefficient between atomic interactions
+#since our molecules have two atom tipes we declare how to interact between them
+# we are not considering cross terms 
+
 pair_coeff   1 1 0.1521 3.1507   # O–O (ε [kcal/mol], σ [Å])
-pair_coeff   2 2 0.0 0.0         # H has no LJ
+pair_coeff   2 2 0.0 0.0         # H has no LJ for tip3 models 
 
 # SHAKE constraints (bond type 1 = O–H, angle type 1 = H–O–H)
+#define harmonic potentials for bonds and angles in the topolgoy
 bond_style   harmonic
 angle_style  harmonic
+
+#For bond type 1 .ie (O-H) we have kb= 0.0 r0=.9 (kb=0 removes restoring force)
 bond_coeff   1 0.0 0.9572
+
+#For angles of type 1 (H-O-H) we define a constant ka=0 and a equilibrium angle of 104.52    
 angle_coeff  1 0.0 104.52
+
+#Applies the SHAKE algorithm to all 
+#this algorithm forces internal constraints to keep the molecules rigid 
+#shake apply bonds and angles of type 1 declarated above
 fix rig all shake 0.0001 20 0 b 1 a 1
+
+#set extra distance of 2 beyond cutoffs and a binning methods
+#The rest is a computational stuff to specify how the simulation need to be calculated 
+#time step is in fs
 
 neighbor 2.0 bin
 neigh_modify every 1 delay 0 check yes
 timestep 2.0
+
+#inicialize velocities from a boltzman distribution at 300k and random seed 49281
+#mom yes rot yes remove linear and angular momentum from the group (all)
 velocity all create 300.0 49281 mom yes rot yes
 
+#apply nose-hoover ensembel= fixed temperature, volume and number of particles 
 fix nvt all nvt temp 300 300 100
 
-#----------output---------#
+#----------output---------# parameteres you print while running simulation 
 thermo_style custom step temp vol press pe ke etotal density
 thermo 100
-dump traj all atom 100 water.lammpstrj
+dump traj all atom 100 water.lammpstrj #print the trajectory every 100 steeps
 
 
 # RDF (assumes type 1 = O; change if needed)
