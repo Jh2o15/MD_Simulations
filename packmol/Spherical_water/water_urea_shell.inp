@@ -1,20 +1,34 @@
 
 filetype pdb
+#name of the output file
 output water_urea_shell.pdb
+
+#minimum distance of separation 
 tolerance 2.0
+
+#Each group of molecules are called structure, in this case we are having 3
+#inside, shell. outside  
+
+
 structure urea.pdb
     number 50
+#sphere at the center or radious 8
     inside sphere 0. 0. 0. 8.0
+#sphere at the center or radious 8
     outside sphere 0. 0. 0. 7.0 
+#This is to have a cut and observe the inside 
     above plane 0.0 0.0 4.0 0.0
 end structure 
+
 structure tip3.pdb
     number 60
     inside sphere 0. 0. 0. 7.0
     above plane 0.0 0.0 4.0 0.0
 end structure
+
 structure tip3.pdb 
     number 200 
+#under which box you are goning to put the experiment
     inside box -9.0 -9.0 -9.0  9.0  9.0  9.0
     outside sphere 0. 0. 0. 8.0 
     above plane 0. 0. 4.0 0.
