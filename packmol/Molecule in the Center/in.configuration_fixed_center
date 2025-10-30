@@ -1,0 +1,18 @@
+tolerance 2.0
+filetype pdb
+output solvate.pdb
+
+#Colocate a glutamine molecule in the center
+
+structure glutamine.pdb
+    number 1 
+    center
+    fixed 0. 0. 0. 0. 0. 0. #3 coordinates + 6 euler rotation angels
+end structure
+
+#create water outside of it 
+
+structure tip3.pdb
+    number 100 
+    inside box -30 -30 -30 30 30 30  #x,y,z lower x,y,z upper
+end structure
