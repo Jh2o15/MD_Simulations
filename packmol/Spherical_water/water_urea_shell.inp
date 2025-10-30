@@ -1,0 +1,21 @@
+
+filetype pdb
+output water_urea_shell.pdb
+tolerance 2.0
+structure urea.pdb
+    number 50
+    inside sphere 0. 0. 0. 8.0
+    outside sphere 0. 0. 0. 7.0 
+    above plane 0.0 0.0 4.0 0.0
+end structure 
+structure tip3.pdb
+    number 60
+    inside sphere 0. 0. 0. 7.0
+    above plane 0.0 0.0 4.0 0.0
+end structure
+structure tip3.pdb 
+    number 200 
+    inside box -9.0 -9.0 -9.0  9.0  9.0  9.0
+    outside sphere 0. 0. 0. 8.0 
+    above plane 0. 0. 4.0 0.
+end structure 
