@@ -5,9 +5,11 @@ output solvate.pdb
 #Colocate a glutamine molecule in the center
 
 structure glutamine.pdb
+    #Number of molecules 
     number 1 
     center
-    fixed 0. 0. 0. 0. 0. 0. #3 coordinates + 6 euler rotation angels
+    #fix in 3 coordinates + 6 euler rotation angels
+    fixed 0. 0. 0. 0. 0. 0.
 end structure
 
 #create water outside of it 
