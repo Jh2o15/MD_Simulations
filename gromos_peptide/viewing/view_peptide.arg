@@ -1,0 +1,4 @@
+@topo peptide.top
+@pbc v
+@outformat pdb
+@traj peptide_min.cnf

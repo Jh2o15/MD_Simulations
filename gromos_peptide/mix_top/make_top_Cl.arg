@@ -1,0 +1,5 @@
+@build	54a7.mtb
+@param	54a7.ifp
+# the chloride ion building block
+@seq	CL-
+@solv	H2O

@@ -1,0 +1,19 @@
+PATTERN    IBBPBBPBBPBBPBB
+FORCE_ENCODE_LAST_FRAME
+OUTPUT     /Users/joel.maldonado/Documents/Unimelb/Coding_projects/Gromos/simulations/gromos_peptide/vis3/simulationoo.mpg
+INPUT_DIR  /Users/joel.maldonado/Documents/Unimelb/Coding_projects/Gromos/simulations/gromos_peptide/vis3
+INPUT
+simulationoo.*.ppm [00000--0001]
+END_INPUT
+BASE_FILE_FORMAT PPM
+INPUT_CONVERT *
+GOP_SIZE 15
+SLICES_PER_FRAME 1
+PIXEL HALF
+RANGE 32
+PSEARCH_ALG LOGARITHMIC
+BSEARCH_ALG CROSS2
+IQSCALE 8
+PQSCALE 10
+BQSCALE 25
+REFERENCE_FRAME DECODED

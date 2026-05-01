@@ -1,0 +1,4 @@
+@build /Users/joel.maldonado/Documents/Unimelb/Coding_projects/Gromos/forcefields/official/54a7.mtb
+@param /Users/joel.maldonado/Documents/Unimelb/Coding_projects/Gromos/forcefields/official/54a7.ifp
+@seq NH3+ VAL TYR ARG LYSH GLN COO-
+@solv H2O

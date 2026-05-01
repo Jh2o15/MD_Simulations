@@ -1,0 +1,6 @@
+@topo      peptide.top
+@pbc       r
+@negative  2 CL-
+@potential 0.8
+@mindist   0.35
+@pos     peptide_h2o.cnf

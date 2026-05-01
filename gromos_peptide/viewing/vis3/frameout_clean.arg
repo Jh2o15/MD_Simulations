@@ -1,0 +1,9 @@
+@topo peptide_2Cl_54a7.top
+@pbc r
+@include ALL
+@traj eq_peptide_1.trc
+ eq_peptide_2.trc
+ eq_peptide_3.trc
+ eq_peptide_4.trc
+ eq_peptide_5.trc
+@outformat pdb
